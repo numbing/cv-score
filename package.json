@@ -31,6 +31,13 @@
     "node": ">=22.13.0"
   },
   "homepage": "https://www.apply-tracker.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/numbing/cv-score.git"
+  },
+  "bugs": {
+    "url": "https://github.com/numbing/cv-score/issues"
+  },
   "author": {
     "name": "Apply Tracker",
     "url": "https://www.apply-tracker.com/"
