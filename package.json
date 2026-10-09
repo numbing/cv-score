@@ -1,0 +1,73 @@
+{
+  "name": "cv-score",
+  "version": "1.0.0",
+  "description": "Score CVs and resumes from 0–100 for ATS readiness and resume quality, with local PDF, DOCX, and text analysis and actionable improvement tips.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "bin": {
+    "cv-score": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "homepage": "https://www.apply-tracker.com/",
+  "author": {
+    "name": "Apply Tracker",
+    "url": "https://www.apply-tracker.com/"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cv",
+    "resume",
+    "ats",
+    "score",
+    "scoring",
+    "resume-checker",
+    "cv-checker",
+    "ats-score",
+    "resume-score",
+    "pdf",
+    "docx"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test && npm run build",
+    "verify:package": "node --import tsx scripts/verify-package.ts",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.11.2",
+    "jszip": "^3.10.2",
+    "mammoth": "^1.13.0",
+    "pdfjs-dist": "^6.4.299"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "pdf-lib": "^1.17.1",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
